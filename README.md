@@ -5,6 +5,8 @@ Though there are limited compile time safety checks (due to the need to use `int
 
 If you do not need dynamic constraints at runtime, or do not need a general filtering function, you may wish to implement someting more specific and perhaps better for your use.
 
+This project is still under active development. Contributions are welcome--reach out if you'd like to do so! 
+
 Short Example:
 
 ```go
