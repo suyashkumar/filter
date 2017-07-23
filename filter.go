@@ -1,6 +1,5 @@
 // Package filter provides abstractions to filter an arbitrary slice of structs
 // based on certain criteria
-// @author: Suyash Kumar
 package filter
 
 import (
@@ -99,7 +98,6 @@ func Filter(in interface{}, cons Constraints) (out []interface{}, err error) {
 		inSlc[i] = inVal.Index(i).Interface()
 	}
 
-	//TODO(suyashkumar): Revisit length and capacity of out
 	out = make([]interface{}, len(inSlc))
 	outIndex := 0
 	for _, e := range inSlc {
@@ -117,5 +115,5 @@ func Filter(in interface{}, cons Constraints) (out []interface{}, err error) {
 		}
 	}
 
-	return out, nil
+	return out[:outIndex], nil
 }

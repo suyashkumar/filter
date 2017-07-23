@@ -34,12 +34,10 @@ func TestFilter(t *testing.T) {
 
 	out, err := filter.Filter(tArr, cons)
 	assert.NoError(err, "No error in happy path")
+	assert.True(len(out) == 2, "Length of output slice should be two")
 
-	//TODO(suyashkumar): Stronger, safer test
+	// All elements in the output should meet the specified condition
 	for _, e := range out {
-		if reflect.DeepEqual(reflect.ValueOf(e), reflect.ValueOf(nil)) {
-			continue
-		}
 		assert.True(
 			reflect.DeepEqual(
 				reflect.ValueOf(e).FieldByName("A").Interface(),
